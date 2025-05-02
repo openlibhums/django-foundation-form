@@ -6,7 +6,7 @@
     {% if inline %}
         <div class="large-3 columns">
             <label for="{{ field.auto_id }}" class="right inline">
-                {{ field.label }} {% if field.field.required %}<span class="red">*</span>{% endif %}
+                {{ field.label }} {% if field.field.required %}<abbr class="red req" title="required">*</abbr>{% endif %}
             </label>
         </div>
         <div class="large-9 columns">
@@ -19,7 +19,7 @@
         <div class="large-12 columns">
             <label for="{{ field.auto_id }}">
                 {{ field.label }}
-                {% if field.field.required %}<span class="red">*</span>{% endif %}
+                {% if field.field.required %}<abbr class="red req" title="required">*</abbr>{% endif %}
                 {% if languages|length > 1 and field.name in form.translated_field_names %}
                     <small class="float-right">[{% trans 'translatable' %}]</small>
                 {% endif %}
